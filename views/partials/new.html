@@ -1,0 +1,27 @@
+<div>
+  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+    <form ng-submit="register()" class="signin" novalidate autocomplete="off">
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="username">Name</label>
+          <input type="text" id="username" name="name" class="form-control" ng-model="blob.name" placeholder="name" lowercase required>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="password">badge</label>
+          <input type="number" id="badge" name="badge" class="form-control" ng-model="blob.badge" placeholder="badge" required>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="password">dob</label>
+          <input type="date" id="dob" name="dob" class="form-control" ng-model="blob.dob" placeholder="dob">
+        </div>
+        <div class="form-group" show-errors>
+          <label for="password">isloved</label>
+          <input type="checkbox" id="isloved" name="isloved" class="form-control" ng-model="blob.isloved" placeholder="isloved" required>
+        </div>
+        <div class="text-center form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

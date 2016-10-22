@@ -1,0 +1,12 @@
+<div>
+	<div class="panel panel-default">
+	    <div class="panel-body">
+	      <ul>
+	        <li dir-paginate="blob in blobs | itemsPerPage: 5">{{blob._id}} {{blob.name}}</li>
+	        <!--<li dir-paginate="x in records | itemsPerPage: 5">{{x}}</li>-->
+	        <!--<li ng-repeat="x in records">{{x}}</li>-->
+	      </ul>
+	    </div>
+	  </div>
+	 <dir-pagination-controls boundary-links="true" template-url="views/partials/dirPagination.tpl.html"></dir-pagination-controls>
+</div>

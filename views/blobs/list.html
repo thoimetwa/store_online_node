@@ -1,0 +1,36 @@
+<!--
+<div ng-controller="myCtrl" class="my-controller">
+	<div class="panel panel-default">
+	    <div class="panel-body">
+	      <ul>
+	        <li ng-repeat="blob in blobs" >{{blob}}</li>
+	      </ul>
+	    </div>
+	  </div>
+	  <h1 ng-repeat="x in records">{{x}}</h1>
+	  <h1>{{message}}</h1>
+	 <dir-pagination-controls boundary-links="true" template-url="/blobs/dirPaginationTemplate"></dir-pagination-controls>
+	 
+	 <script type="text/javascript">
+	 	(function() {
+		angular.module('myApp', []).controller('myCtrl', MyCtrl);
+			     MyCtrl.$inject = ['$scope'];
+			     function MyCtrl ($scope) {
+			     	$scope.currentPage = 1;
+			        $scope.pageSize = 10;
+			        $scope.itemsPerPage = 10;
+			        $scope.blobs = ["phong", "phong 2"];
+			        $scope.records = [
+				        "Alfreds Futterkiste",
+				        "Berglunds snabbköp",
+				        "Centro comercial Moctezuma",
+				        "Ernst Handel",
+				    	];
+			     }
+	 	})();
+	 	 
+	 </script>
+	
+</div>
+-->
+<h1 ng-repeat="x in records">{{x}}</h1>
