@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "author": "Long Pham <blake_master1986@yahoo.com>",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
