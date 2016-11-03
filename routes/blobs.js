@@ -4,6 +4,9 @@ var express = require('express'),
     bodyParser = require('body-parser'), //parses information from POST
     methodOverride = require('method-override'); //used to manipulate POST
 
+//create Blob object
+var Blob = mongoose.model('Blob');
+
 //Any requests to this controller must pass through this 'use' function
 //Copy and pasted from method-override
 router.use(bodyParser.urlencoded({ extended: true }))
@@ -55,7 +58,7 @@ router.route('/')
         var company = req.body.company;
         var isloved = req.body.isloved;
         //call the create function for our database
-        mongoose.model('Blob').create({
+        Blob.create({
             name : name,
             badge : badge,
             dob : dob,
@@ -86,7 +89,6 @@ router.route('/')
 router.route('/')
     //GET all blobs
     .get(function(req, res, next) {
-      debugger;
       res.render('blobs/index');
     });
 
@@ -98,12 +100,26 @@ router.route('/json')
               if (err) {
                   return console.error(err);
               } else {
-                  debugger;
                   res.json(blobs);
-
               }     
         });
     });
+
+router.route('/json/:name')
+    //GET all blobs
+    .get(function(req, res, next) {
+        //retrieve all blobs from Monogo
+        console.log(req.params.name);
+        var blob = new Blob({name: req.params.name});
+        blob.findByName(function (err, blobs) {
+              if (err) {
+                  return console.error(err);
+              } else {
+                  res.json(blobs);
+              }     
+        });
+    });
+
 
 /* GET New Blob page. */
 router.get('/new', function(req, res) {
